@@ -21,11 +21,9 @@ export class AppComponent {
       ])],
       done: [false, Validators.required]
     })
-
-    this.load()
   }
 
-  load() {
+  loadPreview() {
     this.todos.push({title:'Passear com o cachorro', done: false});
     this.todos.push({title:'Ir a padaria', done: true});
   }

@@ -72,11 +72,56 @@ table {
     width: 80vw;
     height: 500px;
     text-align: center;
+    border: 1px solid #8d36ff;
+    border-bottom: none;
 }
 
-#title-table,
-#status-table,
-#controls-table {
+table th {
+    border-bottom: 1.5px solid #2b00ff;
+    font-family: 'Itim', sans-serif;
+}
+
+#title-table {
     width: 40vw;
-    border-bottom: 1px solid red;
+    border-bottom: 1.5px solid #2b00ff;
+    font-family: 'Itim', sans-serif;
+}
+
+#status-table {
+    width: 20vw;
+    border-bottom: 1.5px solid #2b00ff;
+    border-left: 1px solid #2b00ff;
+    font-family: 'Itim', sans-serif;
+}
+
+#controls-table {
+    width: 20vw;
+    border-bottom: 1.5px solid #2b00ff;
+    border-left: 1px solid #2b00ff;
+}
+
+#controls-table button {
+    width: 100px;
+    height: 25px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    background-color: #00b809;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+
+#controls-table button:hover {
+    background-color: #00ff0c;
+}
+
+#controls-table button:first-child {
+    margin-bottom: 10px;
+    background-color: #ff1100;
+    border: none;
+    color: #fff;
+}
+
+#controls-table button:first-child:hover {
+    background-color: #ff0000;
 }

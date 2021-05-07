@@ -15,7 +15,7 @@
                 <tr>
                     <th>Atividade</th>
                     <th>Status</th>
-                    <th>Controles</th>
+                    <th>Controle</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,10 +24,12 @@
                         {{ todo.title }}
                     </td>
                     <td id="status-table">
-                        <span *ngIf="todo.done">OK</span>
+                        <span *ngIf="todo.done ; else elseBlock">Concluido</span>
+                        <ng-template #elseBlock>Pedente</ng-template>
                     </td>
                     <td id="controls-table">
                         <button (click)="removeToDo(todo)">Remover</button>
+                        <br>
                         <button (click)="markAsDone(todo)">Concluir</button>
                     </td>
                 </tr>
