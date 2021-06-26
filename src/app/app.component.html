@@ -6,21 +6,24 @@
     <section class="main">
         <div class="form">
             <form [formGroup]="form" id="form-control">
-                <input type="text" name="title" id="title" formControlName="title">
+                <div class="input">
+                    <label for="title">Nova Tarefa</label>
+                    <input type="text" name="title" id="title" formControlName="title">
+                </div>
                 <button (click)="verifyString()">Adicionar</button>
             </form>
         </div>
         <table>
             <thead>
                 <tr>
-                    <th>Atividade</th>
+                    <th>Tarefas</th>
                     <th>Status</th>
-                    <th>Controle</th>
+                    <th>Controles</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let todo of todos">
-                    <td id="title-table">
+                    <td id="title-table" class="title" contenteditable="false">
                         {{ todo.title }}
                     </td>
                     <td id="status-table">
@@ -31,10 +34,11 @@
                         <button (click)="removeToDo(todo)">Remover</button>
                         <br>
                         <button (click)="markAsDone(todo)">Concluir</button>
+                        <br>
+                        <button (click)="makeTitleEditable(todo)" class="editButton">Editar</button>
                     </td>
                 </tr>
             </tbody>
-
         </table>
     </section>
 </div>

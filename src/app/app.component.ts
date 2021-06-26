@@ -23,15 +23,15 @@ export class AppComponent {
     })
   }
 
-  loadPreview() {
-    this.todos.push({title:'Passear com o cachorro', done: false});
-    this.todos.push({title:'Ir a padaria', done: true});
-  }
+  // loadPreview() {
+  //   this.todos.push({title:'Passear com o cachorro', done: false});
+  //   this.todos.push({title:'Ir a padaria', done: true});
+  // }
 
   verifyString() {
     let title = this.form.controls['title'].value;
 
-    if(title == '') {
+    if(title == undefined || title == '') {
       alert('Digite algo')
     }else{
       this.addToDo()
@@ -43,10 +43,7 @@ export class AppComponent {
 
     this.todos.push(new Todo(title,false))
     this.form.reset();
-
   }
-
-
 
   removeToDo(todo : Todo) {
     const index = this.todos.indexOf(todo)
@@ -56,4 +53,15 @@ export class AppComponent {
   markAsDone(todo : Todo) {
     todo.done=true;
   }
+
+  makeTitleEditable(todo : Todo) {
+    var title = document.querySelector('.title');
+    var checktitle = title?.getAttribute('contenteditable');
+    var editbutton = document.querySelector('.editButton') as HTMLInputElement;
+
+    checktitle == 'false' ? (title?.setAttribute('contenteditable','true'),editbutton.innerHTML="Salvar") : (title?.setAttribute('contenteditable','false'),editbutton.innerHTML="Editar");
+    // alert('Clickei')
+  }
+
+
 }
